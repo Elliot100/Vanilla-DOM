@@ -39,9 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // adding new photos
+  var toggleShowButton = function(e) {
+    e.preventDefault();
 
-  // --- your code here!
+    const photoform = document.querySelector(".photo-form-container");
+    if (photoform.className == "photo-form-container hidden") {
+      photoform.className = "photo-form-container";
+    } else {
+      photoform.className = "photo-form-container hidden";
+    }
+  };
 
-
+  const toggleshow = document.querySelector(".photo-show-button");
+  toggleshow.addEventListener("click", toggleShowButton);
 
 });
