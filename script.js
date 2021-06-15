@@ -53,4 +53,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleshow = document.querySelector(".photo-show-button");
   toggleshow.addEventListener("click", toggleShowButton);
 
+  var addNewPhoto = function(e) {
+    e.preventDefault();
+
+    const puppyinput = document.querySelector(".photo-url-input");
+    const newpuppyinput = puppyinput.value;
+    puppyinput.value = "";
+
+    const newimg = document.createElement("img");
+    const newli = document.createElement("li");
+
+    newimg.src = newpuppyinput;
+    newli.appendChild(newimg);
+
+    const dogphotos = document.querySelector(".dog-photos");
+    dogphotos.appendChild(newli);
+  }
+
+  const newPhotoSubmit = document.querySelector(".photo-url-submit");
+  newPhotoSubmit.addEventListener("click", addNewPhoto);
 });
